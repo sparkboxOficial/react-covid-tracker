@@ -5,7 +5,11 @@ import { Select } from './CountryPickerComponents';
 
 import api from '../../api';
 
-const CountryPicker:React.FC = () => {
+interface ICountryPicker {
+  handleChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+}
+
+const CountryPicker:React.FC<ICountryPicker> = ({ handleChange }) => {
   const [countriesApi, setCountriesApi] = useState<ICountries>({ countries: [] });
 
   useEffect(() => {
@@ -18,7 +22,7 @@ const CountryPicker:React.FC = () => {
   }, []);
   
   return (
-    <Select onChange={(e) => console.log(e.target.value)}>
+    <Select onChange={(e) => handleChange(e)}>
       <option value="Global">Global</option>
       {
         countriesApi.countries.map(country => {

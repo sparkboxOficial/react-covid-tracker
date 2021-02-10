@@ -25,8 +25,8 @@ const Card:React.FC<CardProps> = ({ covidNumbers, updatedDate, type }) => {
     <Container>
       <CardBody type={type}>
         <CardRegularText>{typeOfCard}</CardRegularText>
-        <CardNumber start={0} end={100} duration={1.5} separator=","></CardNumber>
-        <CardRegularText>DATA DA ULTIMA ATUALIZAÇÃO</CardRegularText>
+        <CardNumber start={0} end={covidNumbers.value} duration={1.5} separator="."></CardNumber>
+        <CardRegularText>Data: {updatedDate && new Date(updatedDate).toLocaleDateString()}</CardRegularText>
         <CardInfo>{message}</CardInfo>
       </CardBody>
     </Container>
