@@ -5,7 +5,7 @@ export const Select = styled.select`
   width: 80%;
   height: 50px;
   border: none;
-  border-bottom: 1px solid black;
+  border-bottom: 2px solid black;
   padding: 0px 10px;
   font-size: 20px;
 
